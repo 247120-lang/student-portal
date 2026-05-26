@@ -2,24 +2,18 @@ pipeline {
     agent any
 
     stages {
+
         stage('Install') {
             steps {
-                sh 'npm install'
+                bat 'npm install'
             }
         }
 
         stage('Run') {
             steps {
-                sh 'node server.js || true'
+                bat 'node server.js'
             }
         }
-    }
-}
 
-        stage('Run') {
-            steps {
-                sh 'node server.js'
-            }
-        }
     }
 }
